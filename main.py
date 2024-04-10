@@ -1,10 +1,12 @@
 from fastapi import FastAPI, Request
-import uvicorn
 from datetime import datetime
+from pymongo import MongoClient
 
 app = FastAPI()
 
-log = "log.txt"
+client = MongoClient('localhost', 27017)
+db = client['logs_database']
+collection = db['logs_collection']
 
 @app.middleware("http")
 async def log_request(request: Request, call_next):
@@ -12,14 +14,18 @@ async def log_request(request: Request, call_next):
     client_ip = request.client.host
     http_method = request.method
     url = request.url.path
+    timestamp = datetime.now()
 
-    with open(log, "a") as file:
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        escreva_log = f"{timestamp} - HTTP Method: {http_method} | URL: {url} | User-Agent: {user_agent} | Client IP: {client_ip}\n"
-        file.write(escreva_log)
+    log_data = {
+        "timestamp": timestamp,
+        "http_method": http_method,
+        "url": url,
+        "user_agent": user_agent,
+        "client_ip": client_ip
+    }
+    collection.insert_one(log_data)
 
     response = await call_next(request)
-
     return response
 
 @app.get("/")
@@ -31,4 +37,5 @@ async def examplo_post():
     return {"message": "Exemplo de POST"}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000, reload=True)
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=8000)
