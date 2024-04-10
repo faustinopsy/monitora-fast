@@ -1,0 +1,4 @@
+2024-04-09 20:26:14,480 - HTTP Method: GET | URL: / | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 | Client IP: 127.0.0.1
+2024-04-09 20:26:14,680 - HTTP Method: GET | URL: /favicon.ico | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 | Client IP: 127.0.0.1
+2024-04-09 20:35:53,944 - HTTP Method: GET | URL: / | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 | Client IP: 127.0.0.1
+2024-04-09 20:37:13,661 - HTTP Method: POST | URL: /item | User-Agent: PostmanRuntime/7.32.1 | Client IP: 127.0.0.1
