@@ -1,10 +1,12 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Response
 from datetime import datetime
 from pymongo import MongoClient
+from bson import json_util
+import json
 
 app = FastAPI()
 
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb://localhost:27017/')
 db = client['logs_database']
 collection = db['logs_collection']
 
@@ -29,12 +31,22 @@ async def log_request(request: Request, call_next):
     return response
 
 @app.get("/")
-async def inicio():
+async def read_root():
     return {"message": "Olá, mundo!"}
 
-@app.post("/item")
-async def examplo_post():
-    return {"message": "Exemplo de POST"}
+@app.get("/logs")
+async def get_all():
+    logs = list(collection.find({}))
+    for log in logs:
+        log['_id'] = str(log['_id'])
+    return {"logs": logs}
+
+@app.get("/logs/{method}")
+async def get_method(method: str):
+    logs = list(collection.find({"http_method": method.upper()}))
+    for log in logs:
+        log['_id'] = str(log['_id'])
+    return {"logs": logs}
 
 if __name__ == "__main__":
     import uvicorn
