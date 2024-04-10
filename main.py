@@ -23,11 +23,11 @@ async def log_request(request: Request, call_next):
     return response
 
 @app.get("/")
-async def read_root():
+async def inicio():
     return {"message": "Olá, mundo!"}
 
 @app.post("/item")
-async def example_post():
+async def examplo_post():
     return {"message": "Exemplo de POST"}
 
 if __name__ == "__main__":
