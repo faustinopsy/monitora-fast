@@ -42,6 +42,38 @@ async def read_root():
 async def example_post():
     return {"message": "Exemplo de POST"}
 
+@app.get("/logs")
+async def get_all():
+    cursor.execute("SELECT * FROM logs")
+    result = cursor.fetchall()
+    logs = []
+    for row in result:
+        log = {
+            "timestamp": row[0],
+            "http_method": row[1],
+            "url": row[2],
+            "user_agent": row[3],
+            "client_ip": row[4]
+        }
+        logs.append(log)
+    return {"logs": logs}
+
+@app.get("/logs/{method}")
+async def get_method(method: str):
+    cursor.execute("SELECT * FROM logs WHERE http_method = %s", (method,))
+    result = cursor.fetchall()
+    logs = []
+    for row in result:
+        log = {
+            "timestamp": row[0],
+            "http_method": row[1],
+            "url": row[2],
+            "user_agent": row[3],
+            "client_ip": row[4]
+        }
+        logs.append(log)
+    return {"logs": logs}
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="127.0.0.1", port=8000)
