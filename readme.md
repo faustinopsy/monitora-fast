@@ -1,3 +1,8 @@
+# 3 branch nesse projeto
+1- main salvando no aruqivo texto
+2- log-mysql salvando no banco relacional
+3- log-mongo salvando no mongo NOSQL
+
 ## Criar ambiente virtual
 1º python -m venv fastapi_env 
 ## Ativar ambiente virtual 
