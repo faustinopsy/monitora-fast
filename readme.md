@@ -1,7 +1,10 @@
-# 3 branch nesse projeto
+# 4 branch nesse projeto
 1- main salvando no aruqivo texto
 2- log-mysql salvando no banco relacional
 3- log-mongo salvando no mongo NOSQL
+4- log-rethinkdb salvando no rethinkdb NOSQL
+
+-instalar o mongodb ou rethinkdb para testar a versão nosql
 
 ## Criar ambiente virtual
 1º python -m venv fastapi_env 
