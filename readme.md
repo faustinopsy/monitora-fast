@@ -1,3 +1,11 @@
+# 4 branch nesse projeto
+1- main salvando no aruqivo texto
+2- log-mysql salvando no banco relacional
+3- log-mongo salvando no mongo NOSQL
+4- log-rethinkdb salvando no rethinkdb NOSQL
+
+-instalar o mongodb ou rethinkdb para testar a versão nosql
+
 ## Criar ambiente virtual
 1º python -m venv fastapi_env 
 ## Ativar ambiente virtual 
@@ -10,6 +18,8 @@ macOS/Linux: source fastapi_env/bin/activate
 ## instalando em outro ambiente
 5º (instalar em outro local) passo 1 e passo 2 pip install -r requirements.txt
 
+## executar o servidor
+python main.py
 ## tabela mysql
 ```
 CREATE TABLE `logs` (
