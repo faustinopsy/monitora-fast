@@ -1,5 +1,0 @@
-2024-04-09 20:41:55,435 - HTTP Method: POST | URL: /item | User-Agent: PostmanRuntime/7.32.1 | Client IP: 127.0.0.1
-2024-04-09 20:42:14,156 - HTTP Method: GET | URL: / | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 | Client IP: 127.0.0.1
-2024-04-09 20:44:04,597 - HTTP Method: GET | URL: / | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 | Client IP: 127.0.0.1
-2024-04-09 20:44:18,304 - HTTP Method: GET | URL: / | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 | Client IP: 127.0.0.1
-2024-04-09 20:44:56,866 - HTTP Method: GET | URL: / | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 | Client IP: 127.0.0.1

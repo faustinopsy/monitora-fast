@@ -17,3 +17,6 @@ macOS/Linux: source fastapi_env/bin/activate
 4º pip freeze > requirements.txt uvicorn main:app --reload
 ## instalando em outro ambiente
 5º (instalar em outro local) passo 1 e passo 2 pip install -r requirements.txt
+
+## executar o servidor
+python main.py
